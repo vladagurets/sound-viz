@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <canvas id="visualizer"></canvas>
+  <script type="module">
+    import VoiceListener from './VoiceListener.mjs'
+    import BarVisualizer from './BarVisualizer.mjs'
+
+    const canvas = document.querySelector('#visualizer')
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
+
+    const analyser = new VoiceListener(audioCtx, {
+      smoothingTimeConstant: 0.90
+    })
+
+    new BarVisualizer(canvas, analyser, {
+      canvasWidth: 400,
+      canvasHeight: 100,
+      barSize: 40
+    })
+
+  </script>
+</body>
+</html>
