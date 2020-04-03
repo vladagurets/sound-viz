@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <script type="module">
+    import VoiceListener from './src/VoiceListener.mjs'
+    import Drawer from './src/Drawer.mjs'
+    import Controls from './src/Controls.mjs'
+
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
+    const voiceListener = new VoiceListener(audioCtx)
+    const drawer = new Drawer(voiceListener.analyser)
+    const controls = new Controls(onSwitchView)
+  
+    function onSwitchView (view) {
+      drawer.changeFig(view)
+    }
+  </script>
+</body>
+</html>
