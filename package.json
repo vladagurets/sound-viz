@@ -1,0 +1,15 @@
+{
+  "name": "sound",
+  "version": "1.0.0",
+  "main": "index.html",
+  "author": "vladagurets <aguretsvlad@gmail.com>",
+  "homepage": "https://vladagurets.github.io/sound-viz",
+  "repository": "https://github.com/vladagurets/sound-viz",
+  "license": "MIT",
+  "scripts": {
+    "deploy": "gh-pages -d ./"
+  },
+  "dependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
